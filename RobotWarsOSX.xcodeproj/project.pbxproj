@@ -108,11 +108,11 @@
 		BC3D14721D036A03009F8569 /* RobotWarsOSX */ = {
 			isa = PBXGroup;
 			children = (
+				BC3D14CC1D036BF2009F8569 /* Robots */,
 				BC3D14921D036B24009F8569 /* Configuration.h */,
 				BC3D14A71D036B24009F8569 /* GameConstants.h */,
 				BC3D14B61D036B24009F8569 /* TournamentConfiguration.h */,
 				BC3D14931D036B24009F8569 /* Engine */,
-				BC3D14CC1D036BF2009F8569 /* Robots */,
 				BC3D14A81D036B24009F8569 /* Resources */,
 				BC3D147E1D036A03009F8569 /* Assets.xcassets */,
 				BC3D14801D036A03009F8569 /* MainMenu.xib */,
@@ -175,10 +175,10 @@
 		BC3D14CC1D036BF2009F8569 /* Robots */ = {
 			isa = PBXGroup;
 			children = (
-				BC3D14CE1D036C0F009F8569 /* AdvancedRobot.swift */,
-				BC3D14CF1D036C0F009F8569 /* CamperRobot.swift */,
 				BC3D14D01D036C0F009F8569 /* SimpleRobot.swift */,
 				BC3D14D11D036C0F009F8569 /* TurretRobot.swift */,
+				BC3D14CF1D036C0F009F8569 /* CamperRobot.swift */,
+				BC3D14CE1D036C0F009F8569 /* AdvancedRobot.swift */,
 				BC3D14CD1D036C0F009F8569 /* RobotWarsOSX-Bridging-Header.h */,
 			);
 			name = Robots;

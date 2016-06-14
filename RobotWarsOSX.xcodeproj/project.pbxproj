@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1956071D1085B000ED16A6 /* TournamentWonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */; };
+		BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1956081D1085DA00ED16A6 /* flat_medal_big.png */; };
+		BC19560B1D1086E400ED16A6 /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC19560A1D1086E400ED16A6 /* Confetti.sks */; };
 		BC3D14751D036A03009F8569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14741D036A03009F8569 /* AppDelegate.m */; };
 		BC3D14781D036A03009F8569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14771D036A03009F8569 /* main.m */; };
 		BC3D147F1D036A03009F8569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3D147E1D036A03009F8569 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TournamentWonScene.sks; sourceTree = "<group>"; };
+		BC1956081D1085DA00ED16A6 /* flat_medal_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flat_medal_big.png; sourceTree = "<group>"; };
+		BC19560A1D1086E400ED16A6 /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		BC3D14701D036A03009F8569 /* RobotWarsOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotWarsOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3D14731D036A03009F8569 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		BC3D14741D036A03009F8569 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 		BC3D14A81D036B24009F8569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC1956081D1085DA00ED16A6 /* flat_medal_big.png */,
+				BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */,
+				BC19560A1D1086E400ED16A6 /* Confetti.sks */,
 				BC3D14A91D036B24009F8569 /* BombExplosion.sks */,
 				BC3D14AA1D036B24009F8569 /* BulletExplosion.sks */,
 				BC3D14AB1D036B24009F8569 /* fieldOfView.png */,
@@ -242,7 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1956071D1085B000ED16A6 /* TournamentWonScene.sks in Resources */,
 				BC3D14C51D036B24009F8569 /* RobotExplosion.sks in Resources */,
+				BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */,
 				BC3D14C61D036B24009F8569 /* spark.png in Resources */,
 				BC3D14C01D036B24009F8569 /* BombExplosion.sks in Resources */,
 				BC3D147F1D036A03009F8569 /* Assets.xcassets in Resources */,
@@ -251,6 +262,7 @@
 				BC3D14C11D036B24009F8569 /* BulletExplosion.sks in Resources */,
 				BC3D14C21D036B24009F8569 /* fieldOfView.png in Resources */,
 				BC3D14C41D036B24009F8569 /* Robot.sks in Resources */,
+				BC19560B1D1086E400ED16A6 /* Confetti.sks in Resources */,
 				BC3D14D71D03783B009F8569 /* GameOverScene.sks in Resources */,
 				BC3D14C31D036B24009F8569 /* MainScene.sks in Resources */,
 			);

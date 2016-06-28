@@ -14,6 +14,7 @@
 #import "GameConstants.h"
 #import "Helpers.h"
 #import "Configuration.h"
+#import "TournamentConfiguration.h"
 
 @implementation MainScene {
     NSTimeInterval timeSinceLastEvent;
@@ -105,6 +106,15 @@
     timeSinceLastEvent += delta * GAME_SPEED;
     self.currentTimestamp += delta * GAME_SPEED;
     [self updateTimeSinceBomb:timeSinceBomb + delta * GAME_SPEED];
+    
+    if (self.currentTimestamp > 120 && TOURNAMENT) {
+        for (Robot *robot in _robots) {
+            SKEmitterNode *explosion = [SKEmitterNode nodeWithFileNamed:@"BombExplosion"];
+            [self addChild:explosion];
+            explosion.position = robot.position;
+            [robot _gotHit];
+        }
+    }
     
     for (Robot *robot in _robots) {
         if (!CGRectContainsRect(self.frame, robot.robotNode.frame)) {

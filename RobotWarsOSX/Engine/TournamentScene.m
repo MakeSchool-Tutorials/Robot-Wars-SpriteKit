@@ -161,7 +161,7 @@ NSArray *ClassGetSubclasses(Class parentClass)
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"TournamentState"];
         schedule = [[NSUserDefaults standardUserDefaults] objectForKey:@"TournamentState"];
         
-        if (true)
+        if (!schedule)
         {
             // No tournament on disk, so make a new one
             NSArray* allRobots = ClassGetSubclasses([Robot class]);

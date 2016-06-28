@@ -301,7 +301,7 @@ NSArray *ClassGetSubclasses(Class parentClass)
 
     tournamentWonScene.winningRobot = [self getWinningRobot];
     
-    [self.view presentScene:tournamentWonScene];
+    [self.view presentScene:tournamentWonScene transition:[SKTransition fadeWithDuration:0.2f]];
 }
 
 - (NSString*)getWinningRobot

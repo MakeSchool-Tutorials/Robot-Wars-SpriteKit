@@ -19,10 +19,6 @@
     robotLabel.text = _winningRobot;
 }
 
-- (void)update:(NSTimeInterval)currentTime {
-    NSLog(@"Hit");
-}
-
 - (void)setWinningRobot:(NSString *)winningRobot
 {
     if (winningRobot)

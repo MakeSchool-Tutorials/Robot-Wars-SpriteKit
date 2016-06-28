@@ -13,11 +13,20 @@
     SKLabelNode* robotLabel;
 }
 
+- (void)didMoveToView:(SKView *)view
+{
+    robotLabel = (SKLabelNode*) [self childNodeWithName:@"robotLabel"];
+    robotLabel.text = _winningRobot;
+}
+
+- (void)update:(NSTimeInterval)currentTime {
+    NSLog(@"Hit");
+}
+
 - (void)setWinningRobot:(NSString *)winningRobot
 {
     if (winningRobot)
     {
-        robotLabel.text = winningRobot;
         _winningRobot = [winningRobot copy];
     }
 }

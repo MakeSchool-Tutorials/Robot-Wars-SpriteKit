@@ -11,7 +11,5 @@
 @interface TournamentWonScene : SKScene
 
 @property (nonatomic, copy) NSString* winningRobot;
-@property (nonatomic, assign) int recordWins;
-@property (nonatomic, assign) int recordLosses;
 
 @end

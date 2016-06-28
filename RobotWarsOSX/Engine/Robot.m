@@ -87,7 +87,7 @@
 }
 
 - (void)turnGunLeft:(NSInteger)degree {
-    NSAssert(degree >= 0, @"No negative values allowed!");
+    if (degree <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = degree / ROBOT_DEGREES_PER_SECOND / GAME_SPEED;
@@ -97,7 +97,7 @@
 }
 
 - (void)turnGunRight:(NSInteger)degree {
-    NSAssert(degree >= 0, @"No negative values allowed!");
+    if (degree <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = degree / ROBOT_DEGREES_PER_SECOND / GAME_SPEED;
@@ -107,7 +107,7 @@
 }
 
 - (void)turnRobotLeft:(NSInteger)degree {
-    NSAssert(degree >= 0, @"No negative values allowed!");
+    if (degree <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = degree / ROBOT_DEGREES_PER_SECOND / GAME_SPEED;
@@ -118,7 +118,7 @@
 
 
 - (void)turnRobotRight:(NSInteger)degree {
-    NSAssert(degree >= 0, @"No negative values allowed!");
+    if (degree <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = degree / ROBOT_DEGREES_PER_SECOND / GAME_SPEED;
@@ -128,7 +128,7 @@
 }
 
 - (void)moveAhead:(NSInteger)distance {
-    NSAssert(distance >= 0, @"No negative values allowed!");
+    if (distance <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = distance / ROBOT_DISTANCE_PER_SECOND / GAME_SPEED;
@@ -141,7 +141,7 @@
 
 
 - (void)moveBack:(NSInteger)distance {
-    NSAssert(distance >= 0, @"No negative values allowed!");
+    if (distance <= 0) { return; }
     [self waitForMainQueue];
     
     CGFloat duration = distance / ROBOT_DISTANCE_PER_SECOND / GAME_SPEED;

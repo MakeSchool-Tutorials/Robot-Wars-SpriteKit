@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC1956071D1085B000ED16A6 /* TournamentWonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */; };
 		BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1956081D1085DA00ED16A6 /* flat_medal_big.png */; };
 		BC19560B1D1086E400ED16A6 /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC19560A1D1086E400ED16A6 /* Confetti.sks */; };
 		BC3D14751D036A03009F8569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14741D036A03009F8569 /* AppDelegate.m */; };
@@ -28,17 +27,17 @@
 		BC3D14C41D036B24009F8569 /* Robot.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC3D14AD1D036B24009F8569 /* Robot.sks */; };
 		BC3D14C51D036B24009F8569 /* RobotExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC3D14AE1D036B24009F8569 /* RobotExplosion.sks */; };
 		BC3D14C61D036B24009F8569 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BC3D14AF1D036B24009F8569 /* spark.png */; };
-		BC3D14D21D036C0F009F8569 /* AdvancedRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14CE1D036C0F009F8569 /* AdvancedRobot.swift */; };
 		BC3D14D31D036C0F009F8569 /* CamperRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14CF1D036C0F009F8569 /* CamperRobot.swift */; };
-		BC3D14D41D036C0F009F8569 /* SimpleRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14D01D036C0F009F8569 /* SimpleRobot.swift */; };
 		BC3D14D51D036C0F009F8569 /* TurretRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14D11D036C0F009F8569 /* TurretRobot.swift */; };
 		BC3D14D71D03783B009F8569 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC3D14D61D03783B009F8569 /* GameOverScene.sks */; };
 		BC3D14D81D0378D2009F8569 /* TournamentScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14A41D036B24009F8569 /* TournamentScene.m */; };
 		BC3D14DA1D0388B8009F8569 /* TournamentScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC3D14D91D0388B8009F8569 /* TournamentScene.sks */; };
+		BCCD0AD41D22FFE9004720FB /* TournamentWonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BCCD0AD31D22FFE9004720FB /* TournamentWonScene.sks */; };
+		BCCD0AD71D230236004720FB /* AdvancedRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD0AD51D230236004720FB /* AdvancedRobot.swift */; };
+		BCCD0AD81D230236004720FB /* SimpleRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD0AD61D230236004720FB /* SimpleRobot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TournamentWonScene.sks; sourceTree = "<group>"; };
 		BC1956081D1085DA00ED16A6 /* flat_medal_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flat_medal_big.png; sourceTree = "<group>"; };
 		BC19560A1D1086E400ED16A6 /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		BC3D14701D036A03009F8569 /* RobotWarsOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotWarsOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,12 +75,13 @@
 		BC3D14AF1D036B24009F8569 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		BC3D14B61D036B24009F8569 /* TournamentConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TournamentConfiguration.h; sourceTree = "<group>"; };
 		BC3D14CD1D036C0F009F8569 /* RobotWarsOSX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobotWarsOSX-Bridging-Header.h"; sourceTree = "<group>"; };
-		BC3D14CE1D036C0F009F8569 /* AdvancedRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvancedRobot.swift; path = RobotWarsOSX/Robots/AdvancedRobot.swift; sourceTree = SOURCE_ROOT; };
 		BC3D14CF1D036C0F009F8569 /* CamperRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CamperRobot.swift; path = RobotWarsOSX/Robots/CamperRobot.swift; sourceTree = SOURCE_ROOT; };
-		BC3D14D01D036C0F009F8569 /* SimpleRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleRobot.swift; path = RobotWarsOSX/Robots/SimpleRobot.swift; sourceTree = SOURCE_ROOT; };
 		BC3D14D11D036C0F009F8569 /* TurretRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TurretRobot.swift; path = RobotWarsOSX/Robots/TurretRobot.swift; sourceTree = SOURCE_ROOT; };
 		BC3D14D61D03783B009F8569 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		BC3D14D91D0388B8009F8569 /* TournamentScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TournamentScene.sks; sourceTree = "<group>"; };
+		BCCD0AD31D22FFE9004720FB /* TournamentWonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TournamentWonScene.sks; sourceTree = "<group>"; };
+		BCCD0AD51D230236004720FB /* AdvancedRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvancedRobot.swift; path = RobotWarsOSX/Robots/AdvancedRobot.swift; sourceTree = SOURCE_ROOT; };
+		BCCD0AD61D230236004720FB /* SimpleRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleRobot.swift; path = RobotWarsOSX/Robots/SimpleRobot.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +165,8 @@
 		BC3D14A81D036B24009F8569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCCD0AD31D22FFE9004720FB /* TournamentWonScene.sks */,
 				BC1956081D1085DA00ED16A6 /* flat_medal_big.png */,
-				BC1956061D1085B000ED16A6 /* TournamentWonScene.sks */,
 				BC19560A1D1086E400ED16A6 /* Confetti.sks */,
 				BC3D14A91D036B24009F8569 /* BombExplosion.sks */,
 				BC3D14AA1D036B24009F8569 /* BulletExplosion.sks */,
@@ -184,10 +184,10 @@
 		BC3D14CC1D036BF2009F8569 /* Robots */ = {
 			isa = PBXGroup;
 			children = (
-				BC3D14D01D036C0F009F8569 /* SimpleRobot.swift */,
+				BCCD0AD51D230236004720FB /* AdvancedRobot.swift */,
+				BCCD0AD61D230236004720FB /* SimpleRobot.swift */,
 				BC3D14D11D036C0F009F8569 /* TurretRobot.swift */,
 				BC3D14CF1D036C0F009F8569 /* CamperRobot.swift */,
-				BC3D14CE1D036C0F009F8569 /* AdvancedRobot.swift */,
 				BC3D14CD1D036C0F009F8569 /* RobotWarsOSX-Bridging-Header.h */,
 			);
 			name = Robots;
@@ -251,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC1956071D1085B000ED16A6 /* TournamentWonScene.sks in Resources */,
 				BC3D14C51D036B24009F8569 /* RobotExplosion.sks in Resources */,
 				BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */,
 				BC3D14C61D036B24009F8569 /* spark.png in Resources */,
@@ -260,6 +259,7 @@
 				BC3D14DA1D0388B8009F8569 /* TournamentScene.sks in Resources */,
 				BC3D14821D036A03009F8569 /* MainMenu.xib in Resources */,
 				BC3D14C11D036B24009F8569 /* BulletExplosion.sks in Resources */,
+				BCCD0AD41D22FFE9004720FB /* TournamentWonScene.sks in Resources */,
 				BC3D14C21D036B24009F8569 /* fieldOfView.png in Resources */,
 				BC3D14C41D036B24009F8569 /* Robot.sks in Resources */,
 				BC19560B1D1086E400ED16A6 /* Confetti.sks in Resources */,
@@ -277,7 +277,6 @@
 			files = (
 				BC3D14BF1D036B24009F8569 /* TournamentWonScene.m in Sources */,
 				BC3D14BC1D036B24009F8569 /* Robot.m in Sources */,
-				BC3D14D21D036C0F009F8569 /* AdvancedRobot.swift in Sources */,
 				BC3D14BD1D036B24009F8569 /* RobotAction.m in Sources */,
 				BC3D14781D036A03009F8569 /* main.m in Sources */,
 				BC3D14751D036A03009F8569 /* AppDelegate.m in Sources */,
@@ -288,7 +287,8 @@
 				BC3D14B81D036B24009F8569 /* GameOverScene.m in Sources */,
 				BC3D14D81D0378D2009F8569 /* TournamentScene.m in Sources */,
 				BC3D14B71D036B24009F8569 /* Bullet.m in Sources */,
-				BC3D14D41D036C0F009F8569 /* SimpleRobot.swift in Sources */,
+				BCCD0AD81D230236004720FB /* SimpleRobot.swift in Sources */,
+				BCCD0AD71D230236004720FB /* AdvancedRobot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

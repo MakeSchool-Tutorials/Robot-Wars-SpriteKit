@@ -184,14 +184,13 @@ NSArray *ClassGetSubclasses(Class parentClass)
     if (nextMatchNumber >= matches.count)
     {
         tournamentOver = YES;
-        [self removeActionForKey:@"updateCountdown"];
+        [self removeAllActions];
         [self loadTournamentWonScene];
     }
     else
     {
         [schedule setObject:@(nextMatchNumber) forKey:@"CurrentMatch"];
     }
-    
     [self saveTournamentStateToDisk];
 }
 
@@ -298,8 +297,8 @@ NSArray *ClassGetSubclasses(Class parentClass)
 
 - (void)loadTournamentWonScene
 {
-    TournamentWonScene* tournamentWonScene = [TournamentWonScene nodeWithFileNamed: @"TournamentWonScene"];
-  
+    TournamentWonScene* tournamentWonScene = [TournamentWonScene nodeWithFileNamed:@"TournamentWonScene"];
+
     tournamentWonScene.winningRobot = [self getWinningRobot];
     
     [self.view presentScene:tournamentWonScene];

@@ -379,8 +379,8 @@ void calc_collisionAngle_WallHitDirection(CGPoint wallNormalVector, Robot *robot
     // Calculate Collision Angle
     *collisionAngle_p = angleSigned([robot headingDirection], wallNormalVector);
     *collisionAngle_p = roundf(radToDeg(*collisionAngle_p));
-    while (*collisionAngle_p < -180) { collisionAngle_p += 180; }
-    while (*collisionAngle_p > 180) { collisionAngle_p -= 180; }
+    while (*collisionAngle_p < -180) { *collisionAngle_p += 360; }
+    while (*collisionAngle_p > 180) { *collisionAngle_p -= 360; }
     *direction_p = radAngleToRobotWallHitDirection(*collisionAngle_p);
 }
 

@@ -13,6 +13,25 @@
 #import "TournamentWonScene.h"
 #import "TournamentConfiguration.h"
 
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
+
+@implementation NSMutableArray (Shuffling)
+
+- (void)shuffle
+{
+    NSUInteger count = [self count];
+    if (count < 1) return;
+    for (NSUInteger i = 0; i < count - 1; ++i) {
+        NSInteger remainingCount = count - i;
+        NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
+        [self exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+    }
+}
+
+@end
+
 static NSMutableDictionary* schedule;
 
 @implementation TournamentScene
@@ -121,7 +140,7 @@ NSArray *ClassGetSubclasses(Class parentClass)
         NSDictionary* record = @{@"Wins": @(0), @"Losses": @(0), @"Draws": @(0)};
         [records setObject:record forKey:robotOneClassString];
     }
-    
+    [matches shuffle];
     return @{@"Matches": matches, @"CurrentMatch": @(-1), @"Records": records};
 }
 
@@ -142,7 +161,7 @@ NSArray *ClassGetSubclasses(Class parentClass)
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"TournamentState"];
         schedule = [[NSUserDefaults standardUserDefaults] objectForKey:@"TournamentState"];
         
-        if (!schedule)
+        if (true)
         {
             // No tournament on disk, so make a new one
             NSArray* allRobots = ClassGetSubclasses([Robot class]);

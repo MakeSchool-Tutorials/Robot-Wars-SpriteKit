@@ -227,9 +227,9 @@
 - (void)dropBomb {
     CGSize dim = [self dimensions];
     
-    int corner = arc4random_uniform(4);
+    int corner = arc4random_uniform(5);
     int angle = arc4random_uniform(90);
-    int distance = arc4random_uniform([self dimensions].width/4);
+    int distance = arc4random_uniform([self dimensions].width/2);
     CGPoint cornerPosition = CGPointZero;
     
     switch (corner) {

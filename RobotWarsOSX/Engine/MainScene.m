@@ -107,7 +107,7 @@
     self.currentTimestamp += delta * GAME_SPEED;
     [self updateTimeSinceBomb:timeSinceBomb + delta * GAME_SPEED];
     
-    if (self.currentTimestamp > 120 && TOURNAMENT) {
+    if (self.currentTimestamp > 240 && TOURNAMENT) {
         for (Robot *robot in _robots) {
             SKEmitterNode *explosion = [SKEmitterNode nodeWithFileNamed:@"BombExplosion"];
             [self addChild:explosion];
@@ -239,7 +239,7 @@
     
     int corner = arc4random_uniform(5);
     int angle = arc4random_uniform(90);
-    int distance = arc4random_uniform([self dimensions].width/2);
+    int distance = arc4random_uniform([self dimensions].width/3);
     CGPoint cornerPosition = CGPointZero;
     
     switch (corner) {

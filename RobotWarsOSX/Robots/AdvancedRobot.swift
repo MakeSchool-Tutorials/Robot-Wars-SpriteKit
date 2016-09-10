@@ -11,10 +11,10 @@ import Foundation
 class AdvancedRobot: Robot {
     
     enum RobotState {                    // enum for keeping track of RobotState
-        case Default, Turnaround, Firing, Searching
+        case `default`, turnaround, firing, searching
     }
     
-    var currentRobotState: RobotState = .Default {
+    var currentRobotState: RobotState = .default {
         didSet {
             actionIndex = 0
         }
@@ -29,13 +29,13 @@ class AdvancedRobot: Robot {
     override func run() {
         while true {
             switch currentRobotState {
-            case .Default:
+            case .default:
                 performNextDefaultAction()
-            case .Searching:
+            case .searching:
                 performNextSearchingAction()
-            case .Firing:
+            case .firing:
                 performNextFiringAction()
-            case .Turnaround:               // ignore Turnaround since handled in hitWall
+            case .turnaround:               // ignore Turnaround since handled in hitWall
                 break
             }
         }
@@ -47,7 +47,7 @@ class AdvancedRobot: Robot {
         switch actionIndex % 1 {          // should be % of number of possible actions
         case 0:
             moveAhead(25)
-            currentRobotState = .Searching
+            currentRobotState = .searching
         default:
             break
         }
@@ -59,11 +59,11 @@ class AdvancedRobot: Robot {
         case 0:
             moveAhead(50)
         case 1:
-            turnRobotLeft(20)
+            turnLeft(20)
         case 2:
             moveAhead(50)
         case 3:
-            turnRobotRight(20)
+            turnRight(20)
         default:
             break
         }
@@ -72,7 +72,7 @@ class AdvancedRobot: Robot {
     
     func performNextFiringAction() {
         if currentTimestamp() - lastKnownPositionTimestamp > firingTimeout {
-            currentRobotState = .Searching
+            currentRobotState = .searching
         } else {
             let angle = Int(angleBetweenGunHeadingDirectionAndWorldPosition(lastKnownPosition))
             if angle >= 0 {
@@ -84,32 +84,32 @@ class AdvancedRobot: Robot {
         }
     }
     
-    override func scannedRobot(robot: Robot!, atPosition position: CGPoint) {
-        if currentRobotState != .Firing {
+    override func scannedRobot(_ robot: Robot!, atPosition position: CGPoint) {
+        if currentRobotState != .firing {
             cancelActiveAction()
         }
         
         lastKnownPosition = position
         lastKnownPositionTimestamp = currentTimestamp()
-        currentRobotState = .Firing
+        currentRobotState = .firing
     }
     
     override func gotHit() {
         // unimplemented
     }
     
-    override func hitWall(hitDirection: RobotWallHitDirection, hitAngle angle: CGFloat) {
+    override func hitWall(_ hitDirection: RobotWallHitDirection, hitAngle angle: CGFloat) {
         cancelActiveAction()
         
         // save old state
         let previousState = currentRobotState
-        currentRobotState = .Turnaround
+        currentRobotState = .turnaround
         
         // always turn directly away from wall
         if angle >= 0 {
-            turnRobotLeft(Int(abs(angle)))
+            turnLeft(Int(abs(angle)))
         } else {
-            turnRobotRight(Int(abs(angle)))
+            turnRight(Int(abs(angle)))
         }
         
         // leave wall
@@ -119,7 +119,7 @@ class AdvancedRobot: Robot {
         currentRobotState = previousState
     }
     
-    override func bulletHitEnemy(bullet: Bullet!) {
+    override func bulletHitEnemy(_ bullet: Bullet!) {
         // unimplemented but could be powerful to use this...
     }
     

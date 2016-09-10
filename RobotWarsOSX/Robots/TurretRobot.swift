@@ -11,10 +11,10 @@ import Foundation
 class TurretRobot: Robot {
     
     enum RobotState {                    // enum for keeping track of RobotState
-        case Scanning, Firing
+        case scanning, firing
     }
     
-    var currentRobotState: RobotState = .Scanning
+    var currentRobotState: RobotState = .scanning
     var lastEnemyHit = CGFloat(0.0)
     let gunToleranceAngle = CGFloat(2.0)
     let firingTimeout = CGFloat(2.5)
@@ -22,12 +22,12 @@ class TurretRobot: Robot {
     override func run() {
         while true {
             switch currentRobotState {
-            case .Scanning:
+            case .scanning:
                 turnGunRight(90)
-            case .Firing:
+            case .firing:
                 if currentTimestamp() - lastEnemyHit > firingTimeout {
                     cancelActiveAction()
-                    currentRobotState = .Scanning
+                    currentRobotState = .scanning
                 } else {
                     shoot()
                 }
@@ -35,27 +35,27 @@ class TurretRobot: Robot {
         }
     }
     
-    override func scannedRobot(robot: Robot!, atPosition position: CGPoint) {
+    override func scannedRobot(_ robot: Robot!, atPosition position: CGPoint) {
         turnToEnemyPosition(position)
         
         lastEnemyHit = currentTimestamp()
-        currentRobotState = .Firing
+        currentRobotState = .firing
     }
     
     override func gotHit() {
         // unimplemented
     }
     
-    override func hitWall(hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
+    override func hitWall(_ hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
         // unimplemented
     }
     
-    override func bulletHitEnemy(bullet: Bullet!) {
+    override func bulletHitEnemy(_ bullet: Bullet!) {
         lastEnemyHit = currentTimestamp()
-        currentRobotState = .Firing
+        currentRobotState = .firing
     }
     
-    func turnToEnemyPosition(position: CGPoint) {
+    func turnToEnemyPosition(_ position: CGPoint) {
         cancelActiveAction()
         
         // calculate angle between turret and enemey

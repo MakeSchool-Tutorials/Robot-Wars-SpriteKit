@@ -11,10 +11,10 @@ import Foundation
 class CamperRobot: Robot {
     
     enum RobotState {                    // enum for keeping track of RobotState
-        case FirstMove, Camping, Firing
+        case firstMove, camping, firing
     }
     
-    var currentRobotState: RobotState = .FirstMove
+    var currentRobotState: RobotState = .firstMove
     
     var lastKnownPosition = CGPoint(x: 0, y: 0)
     var lastKnownPositionTimestamp = CGFloat(0.0)
@@ -24,11 +24,11 @@ class CamperRobot: Robot {
     override func run() {
         while true {
             switch currentRobotState {
-            case .FirstMove:
+            case .firstMove:
                 performFirstMoveAction()
-            case .Camping:
+            case .camping:
                 shoot()
-            case .Firing:
+            case .firing:
                 performNextFiringAction()
             }
         }
@@ -43,18 +43,18 @@ class CamperRobot: Robot {
         if currentPosition.y < arenaSize.height / 2 {
             if currentPosition.x < arenaSize.width/2 {
                 // bottom left
-                turnRobotLeft(90)
+                turnLeft(90)
             } else {
                 // bottom right
-                turnRobotRight(90)
+                turnRight(90)
             }
         } else {
             if currentPosition.x < arenaSize.width/2 {
                 // top left
-                turnRobotRight(90)
+                turnRight(90)
             } else {
                 // top right
-                turnRobotLeft(90)
+                turnLeft(90)
             }
         }
         
@@ -69,13 +69,13 @@ class CamperRobot: Robot {
         // turn gun towards center, shoot, camp out
         turnToCenter()
         shoot()
-        currentRobotState = .Camping
+        currentRobotState = .camping
     }
     
     func performNextFiringAction() {
         if currentTimestamp() - lastKnownPositionTimestamp > firingTimeout {
             turnToCenter()
-            currentRobotState = .Camping
+            currentRobotState = .camping
         } else {
             turnToEnemyPosition(lastKnownPosition)
         }
@@ -92,29 +92,29 @@ class CamperRobot: Robot {
         }
     }
     
-    override func scannedRobot(robot: Robot!, atPosition position: CGPoint) {
-        if currentRobotState != .Firing {
+    override func scannedRobot(_ robot: Robot!, atPosition position: CGPoint) {
+        if currentRobotState != .firing {
             cancelActiveAction()
         }
         
         lastKnownPosition = position
         lastKnownPositionTimestamp = currentTimestamp()
-        currentRobotState = .Firing
+        currentRobotState = .firing
     }
     
     override func gotHit() {
         // unimplemented
     }
     
-    override func hitWall(hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
+    override func hitWall(_ hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
         // unimplemented
     }
     
-    override func bulletHitEnemy(bullet: Bullet!) {
+    override func bulletHitEnemy(_ bullet: Bullet!) {
         shoot()
     }
     
-    func turnToEnemyPosition(position: CGPoint) {
+    func turnToEnemyPosition(_ position: CGPoint) {
         cancelActiveAction()
         
         // calculate angle between turret and enemey

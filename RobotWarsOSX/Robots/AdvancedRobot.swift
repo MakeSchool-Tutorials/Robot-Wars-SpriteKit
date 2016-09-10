@@ -119,8 +119,8 @@ class AdvancedRobot: Robot {
         currentRobotState = previousState
     }
     
-    override func bulletHitEnemy(_ bullet: Bullet!) {
-        // unimplemented but could be powerful to use this...
+    override func bulletHitEnemy(at position: CGPoint) {
+        // unimplemented
     }
     
 }

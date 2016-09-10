@@ -50,7 +50,7 @@ class TurretRobot: Robot {
         // unimplemented
     }
     
-    override func bulletHitEnemy(_ bullet: Bullet!) {
+    override func bulletHitEnemy(at position: CGPoint) {
         lastEnemyHit = currentTimestamp()
         currentRobotState = .firing
     }

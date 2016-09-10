@@ -110,7 +110,7 @@ class CamperRobot: Robot {
         // unimplemented
     }
     
-    override func bulletHitEnemy(_ bullet: Bullet!) {
+    override func bulletHitEnemy(at position: CGPoint) {
         shoot()
     }
     

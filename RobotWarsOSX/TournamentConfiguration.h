@@ -9,7 +9,9 @@
 #ifndef RobotWar_TournamentConfiguration_h
 #define RobotWar_TournamentConfiguration_h
 
-static const int COUNTDOWN = 5;
-static const BOOL TOURNAMENT = NO;
+static const int COUNTDOWN = 3;
+static const BOOL TOURNAMENT = YES;
+static const BOOL SHOWLEADERBOARD = YES;
+static const int SHOWLEADERBOARDFREQUENCY = 10;
 
 #endif

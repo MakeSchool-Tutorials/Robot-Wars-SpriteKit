@@ -12,6 +12,7 @@
 #import "MainScene.h"
 #import "TournamentWonScene.h"
 #import "TournamentConfiguration.h"
+#import "LeaderboardScene.h"
 
 @interface NSMutableArray (Shuffling)
 - (void)shuffle;
@@ -45,6 +46,8 @@ static NSMutableDictionary* schedule;
     
     int countdown;
     BOOL tournamentOver;
+    BOOL cameFromLeaderboard;
+    BOOL showingLeaderboard;
 }
 
 #pragma mark -
@@ -186,13 +189,20 @@ NSArray *ClassGetSubclasses(Class parentClass)
     
     [self updateLabels];
     
-    countdown = COUNTDOWN;
-    countdownLabel.text = [NSString stringWithFormat:@"%d", countdown];
-    SKAction *wait = [SKAction waitForDuration:1.f];
-    SKAction *performSelector = [SKAction performSelector:@selector(updateCountdown) onTarget:self];
-    SKAction *sequence = [SKAction sequence:@[performSelector, wait]];
-    SKAction *repeat = [SKAction repeatActionForever:sequence];
-    [self runAction:repeat withKey:@"updateCountdown"];
+    if (!showingLeaderboard) {
+        countdown = COUNTDOWN;
+        countdownLabel.text = [NSString stringWithFormat:@"%d", countdown];
+        SKAction *wait = [SKAction waitForDuration:1.f];
+        SKAction *performSelector = [SKAction performSelector:@selector(updateCountdown) onTarget:self];
+        SKAction *sequence = [SKAction sequence:@[performSelector, wait]];
+        SKAction *repeat = [SKAction repeatActionForever:sequence];
+        [self runAction:repeat withKey:@"updateCountdown"];
+    }
+}
+
+- (void)setCameFromLeaderboard
+{
+    cameFromLeaderboard = true;
 }
 
 - (void)incrementMatchNumber
@@ -205,6 +215,16 @@ NSArray *ClassGetSubclasses(Class parentClass)
         tournamentOver = YES;
         [self removeAllActions];
         [self loadTournamentWonScene];
+    }
+    else if (SHOWLEADERBOARD && !cameFromLeaderboard && nextMatchNumber != 0 &&
+             nextMatchNumber % SHOWLEADERBOARDFREQUENCY == 0) {
+        showingLeaderboard = true;
+        SKAction *wait = [SKAction waitForDuration:0.5f];
+        SKAction *performSelector = [SKAction performSelector:@selector(showLeaderboard) onTarget:self];
+        SKAction *sequence = [SKAction sequence:@[performSelector, wait]];
+        [self runAction: sequence];
+
+        //[self showLeaderboard];
     }
     else
     {
@@ -245,6 +265,14 @@ NSArray *ClassGetSubclasses(Class parentClass)
     robotTwoStats.text = [NSString stringWithFormat:@"%d - %d", [[robotTwoRecord objectForKey:@"Wins"] intValue], [[robotTwoRecord objectForKey:@"Losses"] intValue]];
     
     roundLabel.text = [NSString stringWithFormat:@"Round %d", matchNumber];
+}
+
+- (void)showLeaderboard
+{
+    LeaderboardScene *leaderboard = [LeaderboardScene nodeWithFileNamed: @"LeaderboardScene"];
+    [leaderboard initWithCurrentResults:[schedule objectForKey:@"Records"]];
+    
+    [self.view presentScene:leaderboard];
 }
 
 - (void)loadNextMatch

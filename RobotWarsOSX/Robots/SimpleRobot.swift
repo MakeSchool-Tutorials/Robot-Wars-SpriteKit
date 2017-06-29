@@ -13,44 +13,44 @@ class SimpleRobot: Robot {
     override func run() {
         while true {
             moveAhead(80)
-            turnRobotRight(20)
+            turnRight(20)
             moveAhead(100)
             shoot()
-            turnRobotLeft(10)
+            turnLeft(10)
         }
     }
     
-    override func scannedRobot(robot: Robot!, atPosition position: CGPoint) {
+    override func scannedRobot(_ robot: Robot!, atPosition position: CGPoint) {
         // unimplemented
     }
     
     override func gotHit() {
         shoot()
-        turnRobotLeft(45)
+        turnLeft(45)
         moveAhead(100)
     }
     
-    override func hitWall(hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
+    override func hitWall(_ hitDirection: RobotWallHitDirection, hitAngle: CGFloat) {
         cancelActiveAction()
         
         switch hitDirection {
-        case .Front:
-            turnRobotRight(180)
+        case .front:
+            turnRight(180)
             moveAhead(20)
-        case .Rear:
+        case .rear:
             moveAhead(80)
-        case .Left:
-            turnRobotRight(90)
+        case .left:
+            turnRight(90)
             moveAhead(20)
-        case .Right:
-            turnRobotLeft(90)
+        case .right:
+            turnLeft(90)
             moveAhead(20)
-        case .None:           // should never be none, but switch must be exhaustive
+        case .none:           // should never be none, but switch must be exhaustive
             break
         }
     }
     
-    override func bulletHitEnemy(bullet: Bullet!) {
+    override func bulletHitEnemy(at position: CGPoint) {
         // unimplemented
     }
     

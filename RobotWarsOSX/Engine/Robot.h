@@ -7,8 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Bullet.h"
 
-@class Bullet;
 @class Robot;
 
 typedef NS_ENUM(NSInteger, RobotWallHitDirection) {
@@ -79,7 +79,7 @@ Shallow copy of the robot that has been scanned. You can only access the class n
  Reference to the bullet that hit the enemy.
  
  */
-- (void)bulletHitEnemy:(Bullet*)bullet;
+- (void)bulletHitEnemyAt:(CGPoint)position;
 
 
 /**

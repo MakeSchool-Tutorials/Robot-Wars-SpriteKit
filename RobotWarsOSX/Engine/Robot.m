@@ -281,7 +281,7 @@
 
 - (void)_bulletHitEnemy:(Bullet*)bullet {
     dispatch_group_async(mainQueueGroup, _mainQueue, ^{
-        [self bulletHitEnemy:bullet];
+        [self bulletHitEnemyAt: bullet.position];
     });
 }
 
@@ -297,7 +297,7 @@
 - (void)hitWall:(RobotWallHitDirection)hitDirection hitAngle:(CGFloat)angle {};
 - (void)scannedRobot:(Robot*)robot atPosition:(CGPoint)position {};
 - (void)run {};
-- (void)bulletHitEnemy:(Bullet *)bullet {}
+- (void)bulletHitEnemyAt:(CGPoint)position {}
 
 #pragma mark - UI Updates
 

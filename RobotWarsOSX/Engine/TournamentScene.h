@@ -10,6 +10,7 @@
 
 @interface TournamentScene : SKScene
 
+- (void)setCameFromLeaderboard;
 - (void)updateWithResults:(NSDictionary*)results;
 
 @end

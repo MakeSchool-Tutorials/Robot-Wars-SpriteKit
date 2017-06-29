@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FA8470A1F04817500A799A6 /* LeaderboardScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA847091F04817500A799A6 /* LeaderboardScene.m */; };
+		7FA8471A1F0483A600A799A6 /* LeaderboardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7FA847191F0483A600A799A6 /* LeaderboardScene.sks */; };
 		BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1956081D1085DA00ED16A6 /* flat_medal_big.png */; };
 		BC19560B1D1086E400ED16A6 /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC19560A1D1086E400ED16A6 /* Confetti.sks */; };
 		BC3D14751D036A03009F8569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D14741D036A03009F8569 /* AppDelegate.m */; };
@@ -38,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FA847081F04817500A799A6 /* LeaderboardScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardScene.h; sourceTree = "<group>"; };
+		7FA847091F04817500A799A6 /* LeaderboardScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardScene.m; sourceTree = "<group>"; };
+		7FA847191F0483A600A799A6 /* LeaderboardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeaderboardScene.sks; sourceTree = "<group>"; };
 		BC1956081D1085DA00ED16A6 /* flat_medal_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flat_medal_big.png; sourceTree = "<group>"; };
 		BC19560A1D1086E400ED16A6 /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
 		BC3D14701D036A03009F8569 /* RobotWarsOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotWarsOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +144,8 @@
 		BC3D14931D036B24009F8569 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				7FA847081F04817500A799A6 /* LeaderboardScene.h */,
+				7FA847091F04817500A799A6 /* LeaderboardScene.m */,
 				BC3D14731D036A03009F8569 /* AppDelegate.h */,
 				BC3D14741D036A03009F8569 /* AppDelegate.m */,
 				BC3D149C1D036B24009F8569 /* MainScene.h */,
@@ -165,6 +172,7 @@
 		BC3D14A81D036B24009F8569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7FA847191F0483A600A799A6 /* LeaderboardScene.sks */,
 				BCCD0AD31D22FFE9004720FB /* TournamentWonScene.sks */,
 				BC1956081D1085DA00ED16A6 /* flat_medal_big.png */,
 				BC19560A1D1086E400ED16A6 /* Confetti.sks */,
@@ -225,7 +233,7 @@
 				TargetAttributes = {
 					BC3D146F1D036A03009F8569 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -254,6 +262,7 @@
 			files = (
 				BC3D14C51D036B24009F8569 /* RobotExplosion.sks in Resources */,
 				BC1956091D1085DA00ED16A6 /* flat_medal_big.png in Resources */,
+				7FA8471A1F0483A600A799A6 /* LeaderboardScene.sks in Resources */,
 				BC3D14C61D036B24009F8569 /* spark.png in Resources */,
 				BC3D14C01D036B24009F8569 /* BombExplosion.sks in Resources */,
 				BC3D147F1D036A03009F8569 /* Assets.xcassets in Resources */,
@@ -290,6 +299,7 @@
 				BC3D14B71D036B24009F8569 /* Bullet.m in Sources */,
 				BCCD0AD81D230236004720FB /* SimpleRobot.swift in Sources */,
 				BCCD0AD71D230236004720FB /* AdvancedRobot.swift in Sources */,
+				7FA8470A1F04817500A799A6 /* LeaderboardScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
